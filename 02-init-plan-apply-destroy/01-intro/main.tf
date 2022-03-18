@@ -16,7 +16,7 @@ provider "azurerm" {
 #create resource group
 resource "azurerm_resource_group" "rgterraform_eg" {
     name     = "rg-terraexample"
-    location = "westindia"
+    location = "centralus"
     tags      = {
       Environment = "terraexample"
     }
@@ -26,7 +26,7 @@ resource "azurerm_virtual_network" "virtualterraform"{
   name = "virtualterraform"
   location = azurerm_resource_group.rgterraform_eg.location
   resource_group_name = azurerm_resource_group.rgterraform_eg.name
-  address_space = ["10.0.0.0/16", "10.0.1.0/16"]
+  address_space = ["10.0.0.0/16", "10.1.0.0/16"]
 }
 
 resource "azurerm_subnet" "subnet" {
